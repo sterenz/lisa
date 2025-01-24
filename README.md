@@ -17,33 +17,33 @@ The LISA Ontology serves as a foundational component for projects requiring robu
 ```ttl
 # Example Instances
 
-## Instance: DraftStage
-lisa:DraftStage a lisa:PublishingStage ;
+## Instance: Draft Stage
+lisa:Draft a lisa:PublishingStage ;
     rdfs:label "Draft Stage" ;
     rdfs:comment "Initial stage where annotations are being created and not yet published." ;
     prov:wasAttributedTo [
         a foaf:Person ;
-        foaf:name "D. Surace"
+        foaf:name "J. Doe"
     ] ;
     prov:generatedAtTime "2025-01-23T10:00:00Z"^^xsd:dateTime .
 
-## Instance: PublishedStage
-lisa:PublishedStage a lisa:PublishingStage ;
+## Instance: Published Stage
+lisa:Published a lisa:PublishingStage ;
     rdfs:label "Published Stage" ;
     rdfs:comment "Stage where annotations are published and publicly accessible." ;
     prov:wasAttributedTo [
         a foaf:Person ;
-        foaf:name "D. Surace"
+        foaf:name "J. Doe"
     ] ;
     prov:generatedAtTime "2025-02-01T12:00:00Z"^^xsd:dateTime .
 
-## Instance: DeprecatedStage
-lisa:DeprecatedStage a lisa:PublishingStage ;
+## Instance: Deprecated Stage
+lisa:Deprecated a lisa:PublishingStage ;
     rdfs:label "Deprecated Stage" ;
     rdfs:comment "Stage indicating that annotations are deprecated and no longer valid." ;
     prov:wasAttributedTo [
         a foaf:Person ;
-        foaf:name "D. Surace"
+        foaf:name "J. Doe"
     ] ;
     prov:generatedAtTime "2025-03-15T09:30:00Z"^^xsd:dateTime .
 ```
