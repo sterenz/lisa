@@ -1,0 +1,56 @@
+@prefix lisa: <http://sterenz.github.io/lisa/ontology/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Define the ontology
+<http://sterenz.github.io/lisa/ontology/> a owl:Ontology ;
+    rdfs:label "LISA Ontology for Annotation Versioning" ;
+    rdfs:comment "A custom ontology to model versioning and publishing stages for annotations in Mirador." .
+
+# Define Classes
+lisa:PublishingStage a rdfs:Class ;
+    rdfs:label "Publishing Stage" ;
+    rdfs:comment "Represents the stage in the publishing lifecycle of an annotation." .
+
+# Define Subclasses of PublishingStage
+lisa:Draft a rdfs:Class ;
+    rdfs:label "Draft" ;
+    rdfs:comment "Represents a draft version of an annotation." ;
+    rdfs:subClassOf lisa:PublishingStage .
+
+lisa:Published a rdfs:Class ;
+    rdfs:label "Published" ;
+    rdfs:comment "Represents a published version of an annotation." ;
+    rdfs:subClassOf lisa:PublishingStage .
+
+lisa:Deprecated a rdfs:Class ;
+    rdfs:label "Deprecated" ;
+    rdfs:comment "Indicates that an annotation version is deprecated and no longer in use." ;
+    rdfs:subClassOf lisa:PublishingStage .
+
+# Define Properties
+
+## Property: hasStage
+lisa:hasStage a rdf:Property ;
+    rdfs:label "has stage" ;
+    rdfs:comment "Indicates the publishing stage of an annotation." ;
+    rdfs:domain oa:Annotation ;
+    rdfs:range lisa:PublishingStage .
+
+## Property: transitionTo
+lisa:transitionTo a owl:ObjectProperty ;
+    rdfs:label "transitions to" ;
+    rdfs:comment "Indicates the transition from one publishing stage to another." ;
+    rdfs:domain lisa:PublishingStage ;
+    rdfs:range lisa:PublishingStage .
+
+## Property: generatedAtTime
+prov:generatedAtTime a rdf:Property ;
+    rdfs:label "generated at time" ;
+    rdfs:comment "The time at which the publishing stage was generated." ;
+    rdfs:domain lisa:PublishingStage ;
+    rdfs:range xsd:dateTime .
