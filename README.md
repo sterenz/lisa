@@ -1,7 +1,3 @@
-Certainly! Here's a concise introduction for your `README` that incorporates the full form of LISA and highlights its foundational aspects:
-
----
-
 # LISA Ontology
 
 **LISA Ontology** (Linked Interpretative Semantic Annotations) is a custom, streamlined ontology designed to model annotation versioning and iconographical recognitions within the Mirador annotation tool. Building upon the **Multi-Level Annotation Ontology (MLAO)** framework, LISA integrates elements from the **ICON Ontology** to enhance the semantic representation and management of annotations.
